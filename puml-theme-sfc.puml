@@ -1,0 +1,139 @@
+!THEME "sfc"
+
+!if %not(%variable_exists("$BGCOLOR"))
+	!$BGCOLOR = "transparent"
+!endif
+
+skinparam backgroundColor $BGCOLOR
+skinparam useBetaStyle false
+
+''
+'' Colors taken from the css file of the BS theme
+''
+!$BLUE = "#446e9b"
+!$INDIGO = "#6610f2"
+!$PURPLE = "#6f42c1"SUCCESS
+!$PINK = "#e83e8c"
+!$RED = "#cd0200"
+!$ORANGE = "#fd7e14"
+!$YELLOW = "#d47500"
+!$GREEN = "#3cb521"
+!$TEAL = "#20c997"
+!$CYAN = "#3399f3"
+!$WHITE = "#ffffff"
+!$GRAY = "#777777"
+!$GRAYDARK = "#333333"
+!$PRIMARY = "#446e9b"
+!$SECONDARY = "#999999"
+!$SUCCESS = "#3cb521"
+!$INFO = "#3399f3"
+!$WARNING = "#d47500"
+!$DANGER = "#cd0200"
+!$LIGHT = "#eeeeee"
+!$DARK = "#333333"
+
+!$BLACK = "#000000"
+!$SAICFC_PRIMARY_BACKGROUP = "#FFE6CC"
+!$SAICFC_PRIMARY_BORD = "#D79B00"
+!$SAICFC_DIAMOND_BACKGROUND = "#DAE8FC"
+!$SAICFC_DIAMOND_BORD = "#6C8EBF"
+!$SAICFC_BLACK = "#3C3C3B"
+
+'' *_DARK = tint (lighter) of the main color of 80%
+''          where TINT is calculated by clr + (255-clr) * tint_factor
+'' *_LIGHT = shade (darker) of the main color of 80%
+''          and SHADE is calculated by clr * (1 - shade_factor)
+''
+!$FGCOLOR = $WHITE
+!$PRIMARY_DARK = "#304d6d"
+!$PRIMARY_LIGHT = "#7c9ab9"
+!$PRIMARY_TEXT = $WHITE
+!$SECONDARY_DARK = "#6b6b6b"
+!$SECONDARY_LIGHT = "#b8b8b8"
+!$SECONDARY_TEXT = $BLACK
+!$INFO_DARK = "#246baa"
+!$INFO_LIGHT = "#70b8f7"
+!$INFO_TEXT = $WHITE
+!$SUCCESS_DARK = "#32a243"
+!$SUCCESS_LIGHT = "#4cbc5c"
+!$SUCCESS_TEXT = $WHITE
+!$WARNING_DARK = "#945200"
+!$WARNING_LIGHT = "#e19e4d"
+!$WARNING_TEXT = $WHITE
+!$DANGER_DARK = "#900100"
+!$DANGER_LIGHT = "#dc4e4d"
+!$DANGER_TEXT = $WHITE
+!$DARK_DARK = "#242424"
+!$DARK_LIGHT = "#707070"
+!$LIGHT_DARK = "#a7a7a7"
+!$LIGHT_LIGHT = "#f3f3f3"
+
+!procedure $success($msg)
+  <font color=$SUCCESS><b>$msg
+!endprocedure
+
+!procedure $failure($msg)
+  <font color=$DANGER><b>$msg
+!endprocedure
+
+!procedure $warning($msg)
+  <font color=$WARNING><b>$msg
+!endprocedure
+
+!procedure $primary_scheme()
+	FontColor $PRIMARY_TEXT
+	BorderColor $PRIMARY_DARK
+	BackgroundColor $PRIMARY_LIGHT-$PRIMARY_DARK
+!endprocedure
+
+''
+'' Global Default Values
+''
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             false
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               5
+skinparam ArrowColor            $DARK
+skinparam stereotype {
+    CBackgroundColor $SECONDARY_LIGHT
+    CBorderColor $SECONDARY_DARK
+    ABackgroundColor $SUCCESS_LIGHT
+    ABorderColor $SUCCESS_DARK
+    IBackgroundColor $DANGER_LIGHT
+    IBorderColor $DANGER_DARK
+    EBackgroundColor $WARNING_LIGHT
+    EBorderColor $WARNING_DARK
+    NBackgroundColor $INFO_LIGHT
+    NBorderColor $INFO_DARK
+}
+
+skinparam title {
+	FontColor	                 $BLACK
+	''BorderColor	                 $SECONDARY
+	FontSize	    	         14
+	BorderRoundCorner            6
+	BorderThickness 	         1
+	''BackgroundColor              $SECONDARY_LIGHT-$SECONDARY
+}
+
+!startsub activity
+
+skinparam activity {
+	FontColor $BLACK
+	BorderColor $SAICFC_PRIMARY_BORD 
+	BackgroundColor $SAICFC_PRIMARY_BACKGROUP 
+
+	BarColor $SUCCESS
+	StartColor $SAICFC_BLACK 
+	EndColor $SAICFC_BLACK 
+	''
+	DiamondBackgroundColor $SAICFC_DIAMOND_BACKGROUND 
+  	DiamondBorderColor $SAICFC_DIAMOND_BORD 
+  	DiamondFontColor $BLACK
+}
+!endsub
+
